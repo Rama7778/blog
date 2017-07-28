@@ -1,0 +1,3 @@
+ravtovich_blog_homepage:
+    path:     /
+    defaults: { _controller: RavtovichBlogBundle:Default:index }
