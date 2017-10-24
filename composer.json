@@ -5,8 +5,7 @@
     "description": "The \"Symfony Standard Edition\" distribution",
     "autoload": {
         "psr-4": {
-            "Ravtovich\\BlogBundle\\": "src/Ravtovich/BlogBundle",
-            "AppBundle\\": "src/AppBundle"
+            "Ravtovich\\BlogBundle\\": "src/Ravtovich/BlogBundle"
         },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },
