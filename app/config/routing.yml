@@ -2,8 +2,3 @@ ravtovich_blog:
     resource: "@RavtovichBlogBundle/Resources/config/routing.yml"
     prefix:   /
 
-RavtovichBlogBundle_homepage:
-    path:     /
-    defaults: { _controller: "RavtovichBlogBundle:Page:index" }
-    requirements:
-         methods:  GET
