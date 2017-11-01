@@ -10,4 +10,12 @@ class PostController extends Controller
     {
         return $this->render('RavtovichBlogBundle:Page:index.html.twig');
     }
+    public function aboutAction()
+    {
+        return $this->render('RavtovichBlogBundle:Page:about.html.twig');
+    }
+    public function contactAction()
+    {
+        return $this->render('RavtovichBlogBundle:Page:contact.html.twig');
+    }
 }
