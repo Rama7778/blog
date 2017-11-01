@@ -1,5 +1,3 @@
-RavtovichBlogBundle_homepage:
+ravtovich_blog_homepage:
     path:     /
-    defaults: { _controller: "RavtovichBlogBundle:Post:index" }
-    requirements:
-         methods:  GET
+    defaults: { _controller: RavtovichBlogBundle:Post:index }
