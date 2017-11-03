@@ -5,12 +5,12 @@ namespace Ravtovich\BlogBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Post
+ * Enquiry
  *
- * @ORM\Table(name="post")
+ * @ORM\Table(name="enquiry")
  * @ORM\Entity(repositoryClass="Ravtovich\BlogBundle\Repository\PostRepository")
  */
-class Post
+class Enquiry
 {
     /**
      * @var int
