@@ -10,4 +10,4 @@ ravtovich_blog_contact:
      path:  /contact
      defaults: { _controller: "RavtovichBlogBundle:Post:contact" }
      requirements:
-         methods:  GET
+         methods:  GET|POST

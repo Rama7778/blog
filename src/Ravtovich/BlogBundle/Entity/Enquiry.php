@@ -1,8 +1,11 @@
 <?php
 
 namespace Ravtovich\BlogBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Validator\Constraints\Length;
 
 /**
  * Enquiry
@@ -65,7 +68,7 @@ class Enquiry
      *
      * @param string $name
      *
-     * @return Post
+     * @return Enquiry
      */
     public function setName($name)
     {
@@ -89,7 +92,7 @@ class Enquiry
      *
      * @param string $email
      *
-     * @return Post
+     * @return Enquiry
      */
     public function setEmail($email)
     {
@@ -113,7 +116,7 @@ class Enquiry
      *
      * @param string $subject
      *
-     * @return Post
+     * @return Enquiry
      */
     public function setSubject($subject)
     {
@@ -137,7 +140,7 @@ class Enquiry
      *
      * @param string $body
      *
-     * @return Post
+     * @return Enquiry
      */
     public function setBody($body)
     {
