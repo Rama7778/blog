@@ -19,12 +19,9 @@ class PostController extends Controller
     public function contactAction(Request $request)
     {
         $enquiry = new Enquiry();
-
         $form = $this->createForm(EnquiryType::class, $enquiry);
-
         if ($request->isMethod($request::METHOD_POST)) {
             $form->handleRequest($request);
-
             if ($form->isValid()) {
                 // Perform some action, such as sending an email
 

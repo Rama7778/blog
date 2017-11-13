@@ -35,6 +35,7 @@ class Enquiry
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255)
+     *
      */
     private $email;
 
@@ -42,6 +43,7 @@ class Enquiry
      * @var string
      *
      * @ORM\Column(name="subject", type="string", length=255)
+     *
      */
     private $subject;
 
@@ -157,6 +159,19 @@ class Enquiry
     public function getBody()
     {
         return $this->body;
+    }
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
+    {
+        $metadata->addPropertyConstraint('name', new NotBlank());
+        $metadata->addPropertyConstraint('email', new Email(array(
+            'message' => 'The email is not a valid email.' )));
+        $metadata->addPropertyConstraint('subject',  new Length(array(
+            'max'        => 50
+
+        )));
+        $metadata->addPropertyConstraint('body', new Length(array(
+            'min'        => 50
+        )));
     }
 }
 
