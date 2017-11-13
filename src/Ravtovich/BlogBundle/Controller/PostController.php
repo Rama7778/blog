@@ -23,10 +23,13 @@ class PostController extends Controller
         if ($request->isMethod($request::METHOD_POST)) {
             $form->handleRequest($request);
             if ($form->isValid()) {
-                // Perform some action, such as sending an email
-
-                // Redirect - This is important to prevent users re-posting
-                // the form if they refresh the page
+                $message = \Swift_Message::newInstance()
+                    ->setSubject('Contact enquiry from symblog')
+                    ->setFrom('enquiries@symblog.co.uk')
+                    ->setTo('ravtovich_blog.emails.contact_email')
+                    ->setBody($this->renderView('RavtovichBlogBundle:Page:contactEmail.txt.twig', array('enquiry' => $enquiry)));
+                $this->get('mailer')->send($message);
+                $this->get('session')->getFlashBag()->add('blogger-notice', 'Your contact enquiry was successfully sent. Thank you!');
                 return $this->redirect($this->generateUrl('ravtovich_blog_contact'));
             }
         }

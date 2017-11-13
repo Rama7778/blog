@@ -163,14 +163,16 @@ class Enquiry
     public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
         $metadata->addPropertyConstraint('name', new NotBlank());
-        $metadata->addPropertyConstraint('email', new Email(array(
-            'message' => 'The email is not a valid email.' )));
+        $metadata->addPropertyConstraint('email', new Email());
         $metadata->addPropertyConstraint('subject',  new Length(array(
-            'max'        => 50
+
+            'max'        => 50,
+            'maxMessage' => 'This value is too long.'
 
         )));
         $metadata->addPropertyConstraint('body', new Length(array(
-            'min'        => 50
+            'min'        => 50,
+            'minMessage' => 'This value is too short. '
         )));
     }
 }
