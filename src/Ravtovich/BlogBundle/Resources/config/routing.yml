@@ -11,3 +11,9 @@ ravtovich_blog_contact:
      defaults: { _controller: "RavtovichBlogBundle:Post:contact" }
      requirements:
          methods:  GET|POST
+ravtovich_blog_show:
+    path:  /{id}
+    defaults: { _controller: "RavtovichBlogBundle:Post:show" }
+    requirements:
+        methods:  GET
+        id: \d+

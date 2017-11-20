@@ -280,4 +280,3 @@ class Post
         return $this->updated;
     }
 }
-
