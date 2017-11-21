@@ -1,14 +1,14 @@
 ravtovich_blog_homepage:
     path:     /
-    defaults: { _controller: "RavtovichBlogBundle:Post:index" }
+    defaults: { _controller: "RavtovichBlogBundle:Blog:index" }
 ravtovich_blog_about:
     path:   /about
-    defaults: { _controller: "RavtovichBlogBundle:Post:about" }
+    defaults: { _controller: "RavtovichBlogBundle:Blog:about" }
     requirements:
     methods:  GET
 ravtovich_blog_contact:
      path:  /contact
-     defaults: { _controller: "RavtovichBlogBundle:Post:contact" }
+     defaults: { _controller: "RavtovichBlogBundle:Blog:contact" }
      requirements:
          methods:  GET|POST
 ravtovich_blog_show:
