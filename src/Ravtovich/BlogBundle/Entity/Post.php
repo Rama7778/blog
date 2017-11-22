@@ -56,11 +56,7 @@ class Post
      */
     private $tags;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="comments", type="string", length=255)
-     */
+
     private $comments;
 
     /**
