@@ -8,10 +8,9 @@
             <div class="date"><time datetime="{{ blog.created|date('c') }}">{{ blog.created|date('l, F j, Y') }}</time></div>
             <h2>{{ blog.title }}</h2>
         </header>
-        <img src="{{ asset('images/1.jpg') }}" alt="{{ blog.title }} image not found" class="large" />
+        <img src="{{ asset('images.jpg') }}" alt="{{ blog.title }} image not found" class="large" />
         <div>
-            <img src="http://blog/src/Ravtovich/BlogBundle/Resources/views/Post/images/images/1.jpg">
-            {{ asset('images/1.jpg') }}
+
             <p>{{ blog.blog }}</p>
             <p>{{ blog.tags }}</p>
         </div>

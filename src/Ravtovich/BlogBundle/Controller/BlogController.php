@@ -15,7 +15,7 @@ class BlogController extends Controller
 
         $blogs = $em->createQueryBuilder()
             ->select('b')
-            ->from('RavtovichBlogBundle:Post',  'b')
+            ->from('RavtovichBlogBundle:Post', 'b')
             ->addOrderBy('b.created', 'DESC')
             ->getQuery()
             ->getResult();

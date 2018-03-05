@@ -3,13 +3,12 @@
 namespace Ravtovich\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
 /**
- * Post
- *
+ * @ORM\Entity(repositoryClass="Blogger\BlogBundle\Entity\Repository\PostRepository")
  * @ORM\Table(name="post")
- * @ORM\Entity(repositoryClass="Ravtovich\BlogBundle\Repository\PostRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
+
 class Post
 {
     /**
@@ -154,11 +153,12 @@ class Post
 
     public function getBlog($length = null)
     {
-        if (false === is_null($length) && $length > 0)
-            return substr($this->blog, 0, $length);
-        else
-            return $this->blog;
+            if (false === is_null($length) && $length > 0)
+                return substr($this->blog, 0, $length);
+            else
+                return $this->blog;
     }
+
 
     /**
      * Set image
