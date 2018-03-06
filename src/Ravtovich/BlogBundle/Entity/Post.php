@@ -3,6 +3,7 @@
 namespace Ravtovich\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  *
@@ -12,6 +13,18 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Post
 {
+    /**
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="blog")
+     */
+    protected $comments;
+
+    public function __construct()
+    {
+        $this->comments = new ArrayCollection();
+
+        $this->setCreated(new \DateTime());
+        $this->setUpdated(new \DateTime());
+    }
     /**
      * @var int
      *
@@ -55,9 +68,6 @@ class Post
      * @ORM\Column(name="tags", type="string", length=255)
      */
     private $tags;
-
-
-    private $comments;
 
     /**
      * @var string
@@ -279,5 +289,29 @@ class Post
     public function getUpdated()
     {
         return $this->updated;
+    }
+
+    /**
+     * Add comment
+     *
+     * @param \Ravtovich\BlogBundle\Entity\Comment $comment
+     *
+     * @return Post
+     */
+    public function addComment(\Ravtovich\BlogBundle\Entity\Comment $comment)
+    {
+        $this->comments[] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Remove comment
+     *
+     * @param \Ravtovich\BlogBundle\Entity\Comment $comment
+     */
+    public function removeComment(\Ravtovich\BlogBundle\Entity\Comment $comment)
+    {
+        $this->comments->removeElement($comment);
     }
 }
