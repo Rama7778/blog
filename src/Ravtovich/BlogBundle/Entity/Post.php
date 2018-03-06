@@ -3,12 +3,13 @@
 namespace Ravtovich\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-/**
- * @ORM\Entity(repositoryClass="Blogger\BlogBundle\Entity\Repository\PostRepository")
- * @ORM\Table(name="post")
- * @ORM\HasLifecycleCallbacks()
- */
 
+/**
+ *
+ * @ORM\Table(name="post")
+ * @ORM\Entity(repositoryClass="Ravtovich\BlogBundle\Repository\PostRepository")
+ *  @ORM\HasLifecycleCallbacks()
+ */
 class Post
 {
     /**

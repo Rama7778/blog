@@ -13,12 +13,8 @@ class BlogController extends Controller
         $em = $this->getDoctrine()
             ->getManager();
 
-        $blogs = $em->createQueryBuilder()
-            ->select('b')
-            ->from('RavtovichBlogBundle:Post', 'b')
-            ->addOrderBy('b.created', 'DESC')
-            ->getQuery()
-            ->getResult();
+        $blogs = $em->getRepository('RavtovichBlogBundle:Post')
+            ->getLatestBlogs();
 
         return $this->render('RavtovichBlogBundle:Page:index.html.twig', array(
             'blogs' => $blogs
