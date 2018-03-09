@@ -1,11 +1,14 @@
 <?php
 namespace Ravtovich\BlogBundle\DataFixtures\ORM;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
+
 use Doctrine\Common\Persistence\ObjectManager;
 use Ravtovich\BlogBundle\Entity\Post;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 
-class BlogFixtures implements FixtureInterface
+
+class BlogFixtures extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
@@ -60,6 +63,18 @@ class BlogFixtures implements FixtureInterface
         $manager->persist($blog5);
 
         $manager->flush();
+
+        $this->addReference('blog-1', $blog1);
+        $this->addReference('blog-2', $blog2);
+        $this->addReference('blog-3', $blog3);
+        $this->addReference('blog-4', $blog4);
+        $this->addReference('blog-5', $blog5);
     }
+
+    public function getOrder()
+    {
+        return 1;
+    }
+
 
 }
