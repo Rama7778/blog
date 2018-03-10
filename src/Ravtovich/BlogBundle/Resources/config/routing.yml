@@ -17,3 +17,10 @@ ravtovich_blog_show:
     requirements:
         methods:  GET
         id: \d+
+
+ravtovich_comment_create:
+    path:  /comment/{blog_id}
+    defaults: { _controller: "RavtovichBlogBundle:Comment:create" }
+    requirements:
+        methods:  POST
+        blog_id: \d+
