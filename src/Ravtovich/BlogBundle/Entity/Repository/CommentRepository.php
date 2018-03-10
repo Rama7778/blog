@@ -14,7 +14,7 @@ class CommentRepository extends \Doctrine\ORM\EntityRepository
     {
         $qb = $this->createQueryBuilder('c')
             ->select('c')
-            ->where('c.blog = :blog_id')
+            ->where('c.post = :blog_id')
             ->addOrderBy('c.created')
             ->setParameter('blog_id', $blogId);
 

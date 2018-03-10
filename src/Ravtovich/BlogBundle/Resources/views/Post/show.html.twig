@@ -8,7 +8,7 @@
             <div class="date"><time datetime="{{ blog.created|date('c') }}">{{ blog.created|date('l, F j, Y') }}</time></div>
             <h2>{{ blog.title }}</h2>
         </header>
-        <img src="{{ asset('images.jpg') }}" alt="{{ blog.title }} image not found" class="large" />
+        <img src="{{ asset('bundles/ravtovichblog/images/beach.jpg') }}" alt="{{ blog.title }} image not found" class="large" />
         <div>
 
             <p>{{ blog.blog }}</p>
@@ -18,7 +18,7 @@
     <section class="comments" id="comments">
         <section class="previous-comments">
             <h3>Comments</h3>
-            {% include 'BloggerBlogBundle:Comment:index.html.twig' with { 'comments': comments } %}
+            {% include 'RavtovichBlogBundle:Comment:index.html.twig' with { 'comments': comments } %}
         </section>
     </section>
 {% endblock %}
