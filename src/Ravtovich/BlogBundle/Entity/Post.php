@@ -314,4 +314,8 @@ class Post
     {
         $this->comments->removeElement($comment);
     }
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
 }

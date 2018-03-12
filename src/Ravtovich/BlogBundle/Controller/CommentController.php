@@ -11,9 +11,9 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class CommentController extends Controller
 {
-    public function newAction($blog_id)
+    public function newAction($post_id)
     {
-        $blog = $this->getBlog($blog_id);
+        $blog = $this->getBlog($post_id);
 
         $comment = new Comment();
         $comment->setPost($blog);
@@ -34,7 +34,12 @@ class CommentController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            return $this->redirect($this->generateUrl('ravtovich_blog_show', array(
+            $em = $this->getDoctrine()
+                ->getManager();
+            $em->persist($comment);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('BloggerBlogBundle_blog_show', array(
                     'id' => $comment->getPost()->getId())) .
                 '#comment-' . $comment->getId()
             );
@@ -44,6 +49,7 @@ class CommentController extends Controller
             'comment' => $comment,
             'form'    => $form->createView()
         ));
+
     }
 
     protected function getBlog($blog_id)
@@ -58,5 +64,6 @@ class CommentController extends Controller
 
         return $blog;
     }
+
 
 }

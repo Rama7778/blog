@@ -19,7 +19,7 @@ ravtovich_blog_show:
         id: \d+
 
 ravtovich_comment_create:
-    path:  /comment/{blog_id}
+    path:  /comment/{post_id}
     defaults: { _controller: "RavtovichBlogBundle:Comment:create" }
     requirements:
         methods:  POST
