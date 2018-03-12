@@ -1,5 +1,5 @@
 <?php
-namespace Blogger\BlogBundle\Controller;
+namespace Ravtovich\BlogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Ravtovich\BlogBundle\Entity\Comment;
@@ -19,12 +19,11 @@ class CommentController extends Controller
         $comment->setPost($blog);
         $form   = $this->createForm(CommentType::class, $comment);
 
-        return $this->render('BloggerBlogBundle:Comment:form.html.twig', array(
+        return $this->render('RavtovichBlogBundle:Comment:form.html.twig', array(
             'comment' => $comment,
             'form'   => $form->createView()
         ));
     }
-
     public function createAction(Request $request, $blog_id)
     {
         $blog = $this->getBlog($blog_id);
@@ -35,8 +34,6 @@ class CommentController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            // TODO: Persist the comment entity
-
             return $this->redirect($this->generateUrl('ravtovich_blog_show', array(
                     'id' => $comment->getPost()->getId())) .
                 '#comment-' . $comment->getId()
@@ -53,7 +50,6 @@ class CommentController extends Controller
     {
         $em = $this->getDoctrine()
             ->getManager();
-
         $blog = $em->getRepository('RavtovichBlogBundle:Post')->find($blog_id);
 
         if (!$blog) {
