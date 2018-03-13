@@ -24,9 +24,9 @@ class CommentController extends Controller
             'form'   => $form->createView()
         ));
     }
-    public function createAction(Request $request, $blog_id)
+    public function createAction(Request $request, $post_id)
     {
-        $blog = $this->getBlog($blog_id);
+        $blog = $this->getBlog($post_id);
 
         $comment  = new Comment();
         $comment->setPost($blog);
@@ -39,7 +39,7 @@ class CommentController extends Controller
             $em->persist($comment);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('BloggerBlogBundle_blog_show', array(
+            return $this->redirect($this->generateUrl('ravtovich_blog_show', array(
                     'id' => $comment->getPost()->getId())) .
                 '#comment-' . $comment->getId()
             );
