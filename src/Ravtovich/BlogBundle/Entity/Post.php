@@ -14,7 +14,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 class Post
 {
     /**
-     * @ORM\OneToMany(targetEntity="Comment", mappedBy="blog")
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="post")
      */
     protected $comments;
 
