@@ -25,5 +25,20 @@ class PostController extends Controller
         ));
 
     }
+    public function sidebarAction()
+    {
+        $em = $this->getDoctrine()
+            ->getManager();
+
+        $tags = $em->getRepository('RavtovichBlogBundle:Post')
+            ->getTags();
+
+        $tagWeights = $em->getRepository('RavtovichBlogBundle:Post')
+            ->getTagWeights($tags);
+
+        return $this->render('RavtovichBlogBundle:Page:sidebar.html.twig', array(
+            'tags' => $tagWeights
+        ));
+    }
 
 }

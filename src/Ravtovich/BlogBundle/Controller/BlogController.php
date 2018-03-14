@@ -45,19 +45,4 @@ class BlogController extends Controller
             'form' => $form->createView()
         ));
     }
-    public function sidebarAction()
-    {
-        $em = $this->getDoctrine()
-            ->getManager();
-
-        $tags = $em->getRepository('RavtovichBlogBundle:Blog')
-            ->getTags();
-
-        $tagWeights = $em->getRepository('RavtovichBlogBundle:Blog')
-            ->getTagWeights($tags);
-
-        return $this->render('RavtovichBlogBundle:Page:sidebar.html.twig', array(
-            'tags' => $tagWeights
-        ));
-    }
 }
