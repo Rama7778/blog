@@ -7,7 +7,7 @@ class PostController extends Controller
     /**
      * Show a blog entry
      */
-    public function showAction($id)
+    public function showAction($id, $slug, $comments)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -36,8 +36,15 @@ class PostController extends Controller
         $tagWeights = $em->getRepository('RavtovichBlogBundle:Post')
             ->getTagWeights($tags);
 
+
+        $commentLimit   = $this->container
+            ->getParameter('blogger_blog.comments.latest_comment_limit');
+        $latestComments = $em->getRepository('RavtovichBlogBundle:Comment')
+            ->getLatestComments($commentLimit);
+
         return $this->render('RavtovichBlogBundle:Page:sidebar.html.twig', array(
-            'tags' => $tagWeights
+            'latestComments'    => $latestComments,
+            'tags'              => $tagWeights
         ));
     }
 

@@ -82,7 +82,10 @@ class Post
      * @ORM\Column(name="updated", type="datetime")
      */
     private $updated;
-
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $slug;
 
     /**
      * Get id
@@ -317,5 +320,29 @@ class Post
     public function __toString()
     {
         return $this->getTitle();
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     *
+     * @return Post
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

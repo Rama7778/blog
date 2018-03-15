@@ -1,4 +1,5 @@
 services:
-#    ravtovich_blog.example:
-#        class: Ravtovich\BlogBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+   ravtovich_blog.twig.extension:
+        class: Ravtovich\BlogBundle\Twig\Extensions\RavtovichBlogExtension
+        tags:
+            - { name: twig.extension }
