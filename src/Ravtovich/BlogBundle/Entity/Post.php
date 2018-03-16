@@ -107,8 +107,7 @@ class Post
     public function setTitle($title)
     {
         $this->title = $title;
-
-        return $this;
+        $this->setSlug($this->title);
     }
 
     /**
@@ -269,7 +268,6 @@ class Post
     {
         return $this->created;
     }
-
     /**
      * Set updated
      *
@@ -331,9 +329,7 @@ class Post
      */
     public function setSlug($slug)
     {
-        $this->slug = $slug;
-
-        return $this;
+        $this->slug = $this->slugify($slug);
     }
 
     /**
@@ -344,5 +340,32 @@ class Post
     public function getSlug()
     {
         return $this->slug;
+    }
+    public function slugify($text)
+    {
+        // replace non letter or digits by -
+        $text = preg_replace('#[^\\pL\d]+#u', '-', $text);
+
+        // trim
+        $text = trim($text, '-');
+
+        // transliterate
+        if (function_exists('iconv'))
+        {
+            $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+        }
+
+        // lowercase
+        $text = strtolower($text);
+
+        // remove unwanted characters
+        $text = preg_replace('#[^-\w]+#', '', $text);
+
+        if (empty($text))
+        {
+            return 'n-a';
+        }
+
+        return $text;
     }
 }
