@@ -2,8 +2,13 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link href="{{ asset('bundles/ravtovichblog/css/blog.css') }}" type="text/css" rel="stylesheet" />
-    <link href="{{ asset('bundles/ravtovichblog/css/sidebar.css') }}" type="text/css" rel="stylesheet" />
+    {% stylesheets
+    '@RavtovichBlogBundle/Resources/public/css/*'
+    output='css/blogger.css'
+    filter='yui_css'
+    %}
+    <link href="{{ asset_url }}" rel="stylesheet" media="screen" />
+    {% endstylesheets %}
 {% endblock %}
 {% block sidebar %}
     {{ render(controller('RavtovichBlogBundle:Post:sidebar'))}}
