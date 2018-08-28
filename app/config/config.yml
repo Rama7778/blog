@@ -74,7 +74,8 @@ assetic:
     use_controller: '%kernel.debug%'
     bundles:        [ 'RavtovichBlogBundle' ]
     filters:
-
+        jpegoptim:
+                max: 10
         yui_css:
               jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar"
 
