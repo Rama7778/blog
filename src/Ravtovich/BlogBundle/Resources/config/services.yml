@@ -3,3 +3,5 @@ services:
         class: Ravtovich\BlogBundle\Twig\Extensions\RavtovichBlogExtension
         tags:
             - { name: twig.extension }
+
+

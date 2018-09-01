@@ -7,3 +7,12 @@ RavtovichBlogBundle_homepage:
                           defaults: { _controller: "RavtovichBlogBundle:Page:index" }
                           requirements:
                                methods:  GET
+
+admin_area:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /admin
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin

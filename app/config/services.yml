@@ -14,3 +14,9 @@ services:
         # if you need to do this, you can override this setting on individual services
         public: false
 
+    admin.category:
+        class: Ravtovich\BlogBundle\Admin\PostAdmin
+        arguments: [~, Ravtovich\BlogBundle\Entity\Post,~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Post }
+        public: true
