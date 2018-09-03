@@ -7,6 +7,7 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Sonata\AdminBundle\Show\ShowMapper;
 use Ravtovich\BlogBundle\Entity\Post;
 
 class PostAdmin extends AbstractAdmin
@@ -14,8 +15,11 @@ class PostAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('title', TextType::class)
-            ->add('blog', TextareaType::class)
+            ->with('Content')
+                ->add('title', TextType::class)
+                ->add('blog', TextareaType::class)
+                ->add('tags', TextareaType::class)
+            ->end()
         ;
     }
 
@@ -26,12 +30,24 @@ class PostAdmin extends AbstractAdmin
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('title');
+        $listMapper
+            ->addIdentifier('title')
+            ->add('author')
+            ->add('created')
+            ->add('_action', 'actions', [
+                'actions' => [
+                    'view' => [],
+                    'edit' => [],
+                    'delete' => [],
+                ]])
+        ;
+
     }
-    public function toString($object)
+    protected function configureShowFields(ShowMapper $showMapper)
     {
-        return $object instanceof Post
-            ? $object->getTitle()
-            : 'Post'; // shown in the breadcrumb on the create view
+        $showMapper
+            ->add('blog')
+        ;
     }
+
 }

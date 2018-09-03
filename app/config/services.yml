@@ -18,5 +18,5 @@ services:
         class: Ravtovich\BlogBundle\Admin\PostAdmin
         arguments: [~, Ravtovich\BlogBundle\Entity\Post,~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Post }
+            - { name: sonata.admin, manager_type: orm, group: posts, label: Post }
         public: true

@@ -24,3 +24,9 @@ ravtovich_comment_create:
     requirements:
         methods:  POST
         blog_id: \d+
+
+login:
+  path:   /login
+  defaults:  { _controller: "RavtovichBlogBundle:Default:login" }
+login_check:
+  path:   /login_check
