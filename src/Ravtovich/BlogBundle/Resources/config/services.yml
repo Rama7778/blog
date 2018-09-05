@@ -1,7 +1,0 @@
-services:
-   ravtovich_blog.twig.extension:
-        class: Ravtovich\BlogBundle\Twig\Extensions\RavtovichBlogExtension
-        tags:
-            - { name: twig.extension }
-
-
