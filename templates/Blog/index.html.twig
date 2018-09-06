@@ -8,13 +8,12 @@
                 {#<h2><a href="{{ path('ravtovich_blog_show', { 'id': blog.id, 'slug': blog.slug }) }}">{{ blog.title }}</a></h2>#}
             {#</header>#}
 
-            {#<img src="{{ asset(['bundles/ravtovichblog/images/', blog.image]|join) }}" width="400" height="255" >#}
+            <img src="images/{{  post.image|join }}" width="400" height="255" >
             {#<br>#}
-            {#<div class="snippet">#}
-                {#<p>{{ posts.post(500) }}</p>#}
+            <div class="snippet">
                 <p>{{ post.text(500) }}</p>
                 {#<p class="continue"><a href="{{ path('ravtovich_blog_show', { 'id': blog.id, 'slug': blog.slug }) }}">Continue reading...</a></p>#}
-            {#</div>#}
+            </div>
 
             {#<footer class="meta">#}
                 {#<p>Comments: {{ blog.comments|length }}</p>#}
