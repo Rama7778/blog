@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Post;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
-
+use App\Repository\PostRepository;
 //use Ravtovich\BlogBundle\Entity\Enquiry;
 //use Ravtovich\BlogBundle\Form\EnquiryType;
 
@@ -12,14 +12,13 @@ class BlogController extends AbstractController
 {
     public function indexAction()
     {
+
         $em = $this->getDoctrine()
-            ->getManager();
+                    ->getManager();
 
-//        $post = $em->getRepository('Post')
-//            ->getLatestBlogs()
-        ;
+        $posts = $em->getRepository(Post::class)
+                    ->getLatestBlogs();
 
-        $posts = 'sdsdsdsdsdsd';
         return $this->render('Blog/index.html.twig', array(
             'posts' => $posts
         ));

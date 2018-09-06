@@ -5,7 +5,7 @@ use Symfony\Component\Validator\Mapping\ClassMetadata;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\Repository\PostRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\PostRepository")
  * @ORM\Table(name="comment")
  * @ORM\HasLifecycleCallbacks
  */
@@ -198,11 +198,11 @@ class Comment
     /**
      * Set post
      *
-     * @param \Ravtovich\BlogBundle\Entity\Post $post
+     * @param \App\Entity\Post $post
      *
      * @return Comment
      */
-    public function setPost(\Ravtovich\BlogBundle\Entity\Post $post = null)
+    public function setPost(\App\Entity\Post $post = null)
     {
         $this->post = $post;
 
@@ -212,7 +212,7 @@ class Comment
     /**
      * Get post
      *
-     * @return \Ravtovich\BlogBundle\Entity\Post
+     * @return \App\Entity\Post
      */
     public function getPost()
     {

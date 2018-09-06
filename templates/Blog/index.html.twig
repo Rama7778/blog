@@ -11,7 +11,8 @@
             {#<img src="{{ asset(['bundles/ravtovichblog/images/', blog.image]|join) }}" width="400" height="255" >#}
             {#<br>#}
             {#<div class="snippet">#}
-                <p>{{ blog.post(500) }}</p>
+                {#<p>{{ posts.post(500) }}</p>#}
+                <p>{{ post.text(500) }}</p>
                 {#<p class="continue"><a href="{{ path('ravtovich_blog_show', { 'id': blog.id, 'slug': blog.slug }) }}">Continue reading...</a></p>#}
             {#</div>#}
 
@@ -25,5 +26,5 @@
         {#<p>There are no blog entries for symblog</p>#}
 
     {% endfor %}
-    {{ posts }}
+
 {% endblock %}

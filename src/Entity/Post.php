@@ -8,7 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  *
  * @ORM\Table(name="post")
- * @ORM\Entity(repositoryClass="App\Repository\Repository\PostRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\PostRepository")
  * @ORM\HasLifecycleCallbacks()
  */
 class Post
@@ -51,9 +51,9 @@ class Post
     /**
      * @var string
      *
-     * @ORM\Column(name="blog", type="string", length=255)
+     * @ORM\Column(name="text", type="string", length=255)
      */
-    private $blog;
+    private $text;
 
     /**
      * @var string
@@ -147,13 +147,13 @@ class Post
     /**
      * Set blog
      *
-     * @param string $blog
+     * @param string $text
      *
      * @return Post
      */
-    public function setBlog($blog)
+    public function setText($text)
     {
-        $this->blog = $blog;
+        $this->text = $text;
 
         return $this;
     }
@@ -164,12 +164,12 @@ class Post
      * @return string
      */
 
-    public function getBlog($length = null)
+    public function getText($length = null)
     {
             if (false === is_null($length) && $length > 0)
-                return substr($this->blog, 0, $length);
+                return substr($this->text, 0, $length);
             else
-                return $this->blog;
+                return $this->text;
     }
 
 
@@ -295,11 +295,11 @@ class Post
     /**
      * Add comment
      *
-     * @param \Ravtovich\BlogBundle\Entity\Comment $comment
+     * @param \App\Entity\Comment $comment
      *
      * @return Post
      */
-    public function addComment(\Ravtovich\BlogBundle\Entity\Comment $comment)
+    public function addComment(\App\Entity\Comment $comment)
     {
         $this->comments[] = $comment;
 
@@ -309,9 +309,9 @@ class Post
     /**
      * Remove comment
      *
-     * @param \Ravtovich\BlogBundle\Entity\Comment $comment
+     * @param \App\Entity\Comment $comment
      */
-    public function removeComment(\Ravtovich\BlogBundle\Entity\Comment $comment)
+    public function removeComment(\App\Entity\Comment $comment)
     {
         $this->comments->removeElement($comment);
     }
