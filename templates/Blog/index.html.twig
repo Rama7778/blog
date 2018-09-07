@@ -2,17 +2,17 @@
 
 {% block body %}
     {% for post in posts %}
-        {#<article class="blog">#}
-            {#<div class="date"><time datetime="{{ blog.created|date('c') }}">{{ blog.created|date('l, F j, Y') }}</time></div>#}
-            {#<header>#}
-                {#<h2><a href="{{ path('ravtovich_blog_show', { 'id': blog.id, 'slug': blog.slug }) }}">{{ blog.title }}</a></h2>#}
-            {#</header>#}
+        <article class="blog">
+            <div class="date"><time datetime="{{ post.created|date('c') }}">{{ post.created|date('l, F j, Y') }}</time></div>
+            <header>
+                <h2><a href="{{ path('ravtovich_blog_show', { 'id': post.id, 'slug': post.slug }) }}">{{ post.title }}</a></h2>
+            </header>
 
-            <img src="images/{{  post.image|join }}" width="400" height="255" >
+            <img src="{{ asset('/images')}}/{{  post.image|join }}" >
             {#<br>#}
             <div class="snippet">
                 <p>{{ post.text(500) }}</p>
-                {#<p class="continue"><a href="{{ path('ravtovich_blog_show', { 'id': blog.id, 'slug': blog.slug }) }}">Continue reading...</a></p>#}
+                <p class="continue"><a href="{{ path('ravtovich_blog_show', { 'id': post.id, 'slug': post.slug }) }}">Continue reading...</a></p>
             </div>
 
             {#<footer class="meta">#}
@@ -20,8 +20,8 @@
                 {#<p>Posted by <span class="highlight">{{ blog.author }}</span> at {{ blog.created|date('h:iA') }}</p>#}
                 {#<p>Tags: <span class="highlight">{{ blog.tags }}</span></p>#}
             {#</footer>#}
-        {#</article>#}
-    {#{% else %}#}
+        </article>
+    {% else %}
         {#<p>There are no blog entries for symblog</p>#}
 
     {% endfor %}

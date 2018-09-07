@@ -13,8 +13,6 @@
         <link rel="stylesheet" href="{{ asset('build/css/sidebar.css') }}">
         <link rel="stylesheet" href="{{ asset('build/css/screen.css') }}">
 
-        {#<link href="{{ asset_url }}" rel="stylesheet" media="screen" />#}
-
     {% endblock %}
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
 </head>
@@ -26,16 +24,16 @@
             {% block navigation %}
                 <nav>
                     <ul class="navigation">
-                        <li><a href="{{ path('index') }}">Home</a></li>
-                        {#<li><a href="{{ path('ravtovich_blog_about') }}">About</a></li>#}
-                        {#<li><a href="{{ path('ravtovich_blog_contact') }}">Contact</a></li>#}
+                        <li><a href="{{ path('ravtovich_blog_homepage') }}">Home</a></li>
+                        <li><a href="{{ path('ravtovich_blog_about') }}">About</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </nav>
             {% endblock %}
         </div>
         <hgroup>
-            {#<h2>{% block blog_title %}<a href="{{ path('ravtovich_blog_homepage') }}">symblog</a>{% endblock %}</h2>#}
-            {#<h3>{% block blog_tagline %}<a href="{{ path('ravtovich_blog_homepage') }}">creating a blog in Symfony2</a>{% endblock %}</h3>#}
+            <h2>{% block blog_title %}<a href="{{ path('ravtovich_blog_homepage') }}">symblog</a>{% endblock %}</h2>
+            <h3>{% block blog_tagline %}<a href="{{ path('ravtovich_blog_homepage') }}">creating a blog in Symfony4</a>{% endblock %}</h3>
         </hgroup>
     </header>
 

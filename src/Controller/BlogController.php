@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Post;
+use App\Entity\Comment;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Repository\PostRepository;
+
 //use Ravtovich\BlogBundle\Entity\Enquiry;
 //use Ravtovich\BlogBundle\Form\EnquiryType;
 
@@ -23,10 +25,32 @@ class BlogController extends AbstractController
             'posts' => $posts
         ));
     }
-//    public function aboutAction()
-//    {
-//        return $this->render('RavtovichBlogBundle:Page:about.html.twig');
-//    }
+    public function aboutAction()
+    {
+        return $this->render('Blog/about.html.twig');
+    }
+    public function sidebarAction()
+    {
+        $em = $this->getDoctrine()
+            ->getManager();
+
+        $tags = $em->getRepository(Post::class)
+            ->getTags();
+
+        $tagWeights = $em->getRepository(Post::class)
+            ->getTagWeights($tags);
+
+
+        $commentLimit   = $this->getParameter('blogger_blog.comments.latest_comment_limit');
+        $latestComments = $em->getRepository(Comment::class)
+            ->getLatestComments($commentLimit);
+
+        return $this->render('Blog/sidebar.html.twig', array(
+            'latestComments'    => $latestComments,
+            'tags'              => $tagWeights
+        ));
+    }
+
 //    public function contactAction(Request $request)
 //    {
 //        $enquiry = new Enquiry();

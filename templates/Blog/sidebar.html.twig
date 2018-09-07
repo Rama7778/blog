@@ -19,7 +19,7 @@
                     <a href="{{ path('ravtovich_blog_show', { 'id': comment.post.id, 'slug': comment.post.slug }) }}#comment-{{ comment.id }}">
                         {{ comment.post.title }}
                     </a>
-                    [ <em><time datetime="{{ comment.created|date('c') }}">{{ comment.created|created_ago }}</time></em>]
+                    {#[ <em><time datetime="{{ comment.created|date('c') }}">{{ comment.created|created_ago }}</time></em>]#}
                 </p>
             </header>
             <p>{{ comment.comment }}</p>

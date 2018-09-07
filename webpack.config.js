@@ -21,7 +21,7 @@ Encore
     .addStyleEntry('css/blog', './assets/css/blog.css')
     .addStyleEntry('css/sidebar', './assets/css/sidebar.css')
     .addStyleEntry('css/screen', './assets/css/screen.css')
-    //.addEntry('page1', './assets/js/page1.js')
+    // .addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 
     /*

@@ -1,26 +1,28 @@
-{% extends 'RavtovichBlogBundle::layout.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block title %}{{ blog.title }}{% endblock %}
+{% block title %}{{ post.title }}{% endblock %}
 
 {% block body %}
     <article class="blog">
         <header>
-            <div class="date"><time datetime="{{ blog.created|date('c') }}">{{ blog.created|date('l, F j, Y') }}</time></div>
-            <h2>{{ blog.title }}</h2>
+            <div class="date"><time datetime="{{ post.created|date('c') }}">{{ post.created|date('l, F j, Y') }}</time></div>
+            <h2>{{ post.title }}</h2>
         </header>
-        <img src="{{ asset('bundles/ravtovichblog/images/beach.jpg') }}" alt="{{ blog.title }} image not found" class="large" />
+        <img src="{{ asset('/images')}}/{{ post.image|join }} " alt="{{ post.title }} image not found" class="large" />
         <div>
-
-            <p>{{ blog.blog }}</p>
-            <p>{{ blog.tags }}</p>
+            <p>{{ post.text }}</p>
+            <p>{{ post.tags }}</p>
         </div>
     </article>
     <section class="comments" id="comments">
         <section class="previous-comments">
             <h3>Comments</h3>
-            {% include 'RavtovichBlogBundle:Comment:index.html.twig' with { 'comments': comments } %}
+            {% include 'Comment/index.html.twig' with { 'comments': comments } %}
+        </section>
+        <br>
+        <section>
             <h3>Add Comment</h3>
-            {{ render(controller('RavtovichBlogBundle:Comment:new',{ 'post_id': blog.id })) }}
+            {{ render(controller("App\\Controller\\CommentController::createAction", { 'post_id': post.id })) }}
         </section>
     </section>
 {% endblock %}
