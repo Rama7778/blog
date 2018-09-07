@@ -1,3 +1,7 @@
+admin_area:
+    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
+    prefix: /admin
+
 ravtovich_blog_homepage:
     path:     /
     controller: App\Controller\BlogController::indexAction
@@ -27,3 +31,5 @@ ravtovich_comment_create:
     requirements:
         methods:  POST
         blog_id: \d+
+
+

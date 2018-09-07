@@ -15,15 +15,14 @@
                 <p class="continue"><a href="{{ path('ravtovich_blog_show', { 'id': post.id, 'slug': post.slug }) }}">Continue reading...</a></p>
             </div>
 
-            {#<footer class="meta">#}
-                {#<p>Comments: {{ blog.comments|length }}</p>#}
-                {#<p>Posted by <span class="highlight">{{ blog.author }}</span> at {{ blog.created|date('h:iA') }}</p>#}
-                {#<p>Tags: <span class="highlight">{{ blog.tags }}</span></p>#}
-            {#</footer>#}
+            <footer class="meta">
+                <p>Comments: {{ post.comments|length }}</p>
+                <p>Posted by <span class="highlight">{{ post.author }}</span> at {{ post.created|date('h:iA') }}</p>
+                <p>Tags: <span class="highlight">{{ post.tags }}</span></p>
+            </footer>
         </article>
     {% else %}
-        {#<p>There are no blog entries for symblog</p>#}
-
+        <p>There are no blog entries for symblog</p>
     {% endfor %}
 
 {% endblock %}
