@@ -2,19 +2,26 @@ admin_area:
     resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
     prefix: /admin
 
+login:
+    path:       /login
+    controller: App\Controller\SecurityController::login
+
 ravtovich_blog_homepage:
     path:     /
     controller: App\Controller\BlogController::indexAction
+
 ravtovich_blog_about:
     path:   /about
     controller: App\Controller\BlogController::aboutAction
     requirements:
     methods:  GET
+
 ravtovich_blog_contact:
      path:  /contact
      defaults: { _controller: "RavtovichBlogBundle:Blog:contact" }
      requirements:
          methods:  GET|POST
+
 ravtovich_blog_show:
     path:  /{id}/{slug}
     controller: App\Controller\PostController::showAction

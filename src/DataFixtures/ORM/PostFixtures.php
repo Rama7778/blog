@@ -5,7 +5,7 @@ use App\Entity\Post;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class PostFixures extends Fixture
+class PostFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {

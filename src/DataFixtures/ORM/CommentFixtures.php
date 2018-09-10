@@ -5,7 +5,7 @@ use App\Entity\Comment;
 use App\Entity\Post;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
-use App\DataFixtures\ORM\PostFixures;
+use App\DataFixtures\ORM\PostFixtures;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
 class CommentFixtures extends Fixture implements DependentFixtureInterface
@@ -126,7 +126,7 @@ class CommentFixtures extends Fixture implements DependentFixtureInterface
     public function getDependencies()
     {
         return array(
-            PostFixures::class,
+            PostFixtures::class,
         );
     }
 }
