@@ -315,10 +315,10 @@ class Post
     {
         $this->comments->removeElement($comment);
     }
-    public function __toString()
-    {
-        return $this->getTitle();
-    }
+//    public function __toString()
+//    {
+//        return $this->getTitle();
+//    }
 
     /**
      * Set slug
@@ -368,4 +368,5 @@ class Post
 
         return $text;
     }
+
 }
