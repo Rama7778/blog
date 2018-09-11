@@ -14,7 +14,7 @@ class UserFixtures extends Fixture
         $user->setUsername('123456');
         $user->setPassword('123456');
         $user->setEmail('info@utilvideo.com');
-        $user->setIs_active('true');
+        $user->setIsactive(1);
         $manager->persist($user);
         $manager->flush();
     }
