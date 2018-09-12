@@ -27,10 +27,10 @@
                         <li><a href="{{ path('ravtovich_blog_homepage') }}">Home</a></li>
                         <li><a href="{{ path('ravtovich_blog_about') }}">About</a></li>
                         <li><a href="#">Contact</a></li>
-                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        {% if is_granted('ROLE_ADMIN') %}
                             <li>
-                                <a href="{{ path('login') }}">
-                                    Выход
+                                <a href="{{ path('sonata_admin_dashboard') }}">
+                                    Панель администратора
                                 </a>
                             </li>
                         {% endif %}

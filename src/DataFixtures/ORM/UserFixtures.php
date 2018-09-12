@@ -26,6 +26,7 @@ class UserFixtures extends Fixture
         $user->setPassword($password);
         $user->setEmail('info@utilvideo.com');
         $user->setIsactive(1);
+        $user->setRoles('ROLE_ADMIN');
         $manager->persist($user);
         $manager->flush();
     }
