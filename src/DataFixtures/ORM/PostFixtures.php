@@ -10,51 +10,51 @@ class PostFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $post1 = new Post();
-        $post1->setTitle('A day with Symfony4');
-        $post1->setText('Lorem ipsum dolor sit amet, consectetur adipiscing eletra electrify denim vel ports.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut velocity magna. Etiam vehicula nunc non leo hendrerit commodo. Vestibulum vulputate mauris eget erat congue dapibus imperdiet justo scelerisque. Nulla consectetur tempus nisl vitae viverra. Cras el mauris eget erat congue dapibus imperdiet justo scelerisque. Nulla consectetur tempus nisl vitae viverra. Cras elementum molestie vestibulum. Morbi id quam nisl. Praesent hendrerit, orci sed elementum lobortis, justo mauris lacinia libero, non facilisis purus ipsum non mi. Aliquam sollicitudin, augue id vestibulum iaculis, sem lectus convallis nunc, vel scelerisque lorem tortor ac nunc. Donec pharetra eleifend enim vel porta.');
+        $post1->setTitle('The current shape of the North American continent');
+        $post1->setText(' The current shape of the North American continent (the present-day territory of the United States of America and Canada) was formed 25,000 years ago. At that time the great northern icecap flowed over the North American continent. This ice flow determined the size and drainage of the Great Lakes. They changed the direction of the Missouri River and carved the channel of the Hudson River. They created the northern part of the Central Agricultural Basin, which is one of the richest farming areas in the world.');
         $post1->setImage('beach.jpg');
         $post1->setAuthor('dsyph3r');
-        $post1->setTags('symfony4, php, paradise, symblog');
+        $post1->setTags('current, shape, American, continent');
         $post1->setCreated(new \DateTime());
         $post1->setUpdated($post1->getCreated());
         $manager->persist($post1);
 
         $post2 = new Post();
-        $post2->setTitle('The pool on the roof must have a leak');
-        $post2->setText('Vestibulum vulputate mauris eget erat congue dapibus imperdiet justo scelerisque. Na. Cras elementum molestie vestibulum. Morbi id quam nisl. Praesent hendrerit, orci sed elementum lobortis.');
+        $post2->setTitle('On the Atlantic shore of the United States');
+        $post2->setText('On the Atlantic shore of the United States, much of the northern coast is rocky. But the middle and southern Atlantic coasts rise gently from the sea. The Appalachians, which run almost parallel to the east coast, are old mountains with many coal rich valleys between them To the west of the Appalachians, lie plateaus built up over the centuries from bits of stone that were washed down from the mountains and then cut into small hills by streams. Beyond is the great Central Lowland which resembles the plains of Eastern Europe. ');
         $post2->setImage('pool_leak.jpg');
         $post2->setAuthor('Zero Cool');
-        $post2->setTags('pool, leaky, hacked, movie, hacking, symblog');
+        $post2->setTags('Atlantic, shore, United, States');
         $post2->setCreated(new \DateTime());
         $post2->setUpdated($post2->getCreated());
         $manager->persist($post2);
 
         $post3 = new Post();
-        $post3->setTitle('Misdirection. What the eyes see and the ears hear, the mind believes');
-        $post3->setText('Lorem ipsumvehicula nunc non leo hendrerit commodo. Vestibulum vulputate mauris eget erat congue dapibus imperdiet justo scelerisque.');
+        $post3->setTitle('North of the Central Lowland, extending for almost 1,600 kilometers');
+        $post3->setText('North of the Central Lowland, extending for almost 1,600 kilometers, are the five Great Lakes, which the United States shares with Canada. The lakes are considered to contain about half of the world’s fresh water. West of the Central Lowland are the Great Plains. They are stopped by the Rocky Mountains. The Rockies are young mountains. They are the same age as the Alps in Europe.');
         $post3->setImage('misdirection.jpg');
         $post3->setAuthor('Gabriel');
-        $post3->setTags('misdirection, magic, movie, hacking, symblog');
+        $post3->setTags('Lowland, extending, kilometers');
         $post3->setCreated(new \DateTime());
         $post3->setUpdated($post3->getCreated());
         $manager->persist($post3);
 
         $post4 = new Post();
-        $post4->setTitle('The grid - A digital frontier');
-        $post4->setText('Lorem commodo. Vestibulum vulputate mauris eget erat congue dapibus imperdiet justo scelerisque. Nulla consectetur tempus nisl vitae viverra.');
+        $post4->setTitle('The land of the Rockies is made up of quite distinct');
+        $post4->setText('The land of the Rockies is made up of quite distinct and separate regions that are shaped by different geological events. One region was formed of material, which was washed down from the Rockies and pressed into rock. This now encompasses the high Colorado Plateaus, where the Grand Canyon of the Colorado River is cut (1.6 km in depth). The Mississippi flows over 6,400 km from its northern sources in the Rocky Mountains to the Gulf Mexico. This makes it one of the world’s longest waterways. Another region, the high Columbia table land to the north was created by lava that poured from inside the earth and buried old mountains.');
         $post4->setImage('the_grid.jpg');
         $post4->setAuthor('Kevin Flynn');
-        $post4->setTags('grid, daftpunk, movie, symblog');
+        $post4->setTags('land, Rockies, made, distinct');
         $post4->setCreated(new \DateTime());
         $post4->setUpdated($post4->getCreated());
         $manager->persist($post4);
 
         $post5 = new Post();
-        $post5->setTitle('You\'re either a one or a zero. Alive or dead');
-        $post5->setText('Lorem ipsum dolor sit amet, consectetur adipiscing elittibulum vulputate mauris eget erat congue dapibus imperdiet justo scelerisque.');
+        $post5->setTitle('Volcanoes built the Cascade Mountains');
+        $post5->setText('Volcanoes built the Cascade Mountains. The Sierra Nevada range and the ridges of the Great Basin were formed by a strained portion of the earth’s crust. At the border of the Pacific Ocean lie the Coast Ranges. They are relatively low mountains, because they are in the region where occasional earthquakes from time to time build new mountains.');
         $post5->setImage('one_or_zero.jpg');
         $post5->setAuthor('Gary Winston');
-        $post5->setTags('binary, one, zero, alive, dead, !trusting, movie, symblog');
+        $post5->setTags('Volcanoes, Cascade, mountains');
         $post5->setCreated(new \DateTime());
         $post5->setUpdated($post5->getCreated());
         $manager->persist($post5);

@@ -9,10 +9,11 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Sonata\AdminBundle\Show\ShowMapper;
 use App\Entity\Post;
+//use Sonata\AdminBundle\Route\RouteCollection;
 
 class CategoryAdmin extends AbstractAdmin
 {
-    protected function configureFormFields(FormMapper $formMapper)
+   protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
             ->with('Content')
