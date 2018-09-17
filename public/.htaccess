@@ -1,3 +1,4 @@
+
 # Use the front controller as index file. It serves as a fallback solution when
 # every other rewrite/redirect fails (e.g. in an aliased environment without
 # mod_rewrite). Additionally, this reduces the matching process for the
@@ -13,6 +14,9 @@ DirectoryIndex index.php
 
 # Disabling MultiViews prevents unwanted negotiation, e.g. "/index" should not resolve
 # to the front controller "/index.php" but be rewritten to "/index.php/index".
+
+
+
 <IfModule mod_negotiation.c>
     Options -MultiViews
 </IfModule>
@@ -66,3 +70,4 @@ DirectoryIndex index.php
         # RedirectTemp cannot be used instead
     </IfModule>
 </IfModule>
+

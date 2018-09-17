@@ -9,7 +9,7 @@
             </header>
 
             <img src="{{ asset('/images')}}/{{  post.image|join }}" >
-            {#<br>#}
+            {{ asset('/images')}}/{{  post.image|join }}
             <div class="snippet">
                 <p>{{ post.text(500) }}</p>
                 <p class="continue"><a href="{{ path('ravtovich_blog_show', { 'id': post.id, 'slug': post.slug }) }}">Continue reading...</a></p>
