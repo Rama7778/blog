@@ -8,8 +8,6 @@ use App\Repository\CommentRepository;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\CommentType;
 
-//use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 
 /**
  * Comment controller.
